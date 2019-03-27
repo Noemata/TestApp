@@ -33,6 +33,7 @@ namespace TestApp
         public App()
         {
             InitializeComponent();
+            LogManager.GetLog = type => new CaliburnLogger(type);
         }
 
         /// <summary>

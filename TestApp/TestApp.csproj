@@ -75,7 +75,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;DEBUG</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -103,6 +103,7 @@
     <Compile Include="Extensions\Double.Extensions.cs" />
     <Compile Include="Messages\ResumeStateMessage.cs" />
     <Compile Include="Messages\SuspendStateMessage.cs" />
+    <Compile Include="Services\CaliburnLogging.cs" />
     <Compile Include="Services\DialogWindowManager.cs" />
     <Compile Include="Services\IDialogWindowManager.cs" />
     <Compile Include="Services\IUserNotificationService.cs" />
