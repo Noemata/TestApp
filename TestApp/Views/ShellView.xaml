@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="TestApp.Views.ShellView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cm="using:Caliburn.Micro"
+    xmlns:ui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:local="using:TestApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="600"
+    d:DesignHeight="500">
+
+<!--
+            cm:Message.Attach="[Event ItemInvoked] = [Action ItemSelected($eventArgs)]"
+            ItemInvoked="OnItemInvoked"
+-->
+
+    <ui:NavigationView
+            x:Name="NavPanel"
+            x:FieldModifier="public"
+            IsSettingsVisible="True"
+            IsPaneToggleButtonVisible="True"
+            IsBackButtonVisible="Collapsed"
+            PaneDisplayMode="LeftCompact"
+            cm:Message.Attach="[Event ItemInvoked] = [Action ItemSelected($eventArgs)]"
+            >
+        <ui:NavigationView.MenuItems>
+
+            <!-- Home button -->
+            <ui:NavigationViewItem Icon="Home" Content="Home" />
+
+            <!-- Search button -->
+            <ui:NavigationViewItem Icon="Find" Content="Search" />
+
+            <!-- About button -->
+            <ui:NavigationViewItem Icon="Important" Content="About" />
+
+        </ui:NavigationView.MenuItems>
+        <ui:NavigationView.PaneFooter>
+            <!-- Fullscreen button -->
+            <ui:NavigationViewItem Icon="Upload" Content="Full Screen" cm:Message.Attach="[Event Tapped] = [Action ShowFullScreen()]" />
+        </ui:NavigationView.PaneFooter>
+        
+        <Frame
+                x:Name="ContentFrame"
+                x:FieldModifier="public"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                MinWidth="100" MinHeight="100"
+                Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                cm:Message.Attach="[Event Loaded] = [SetupNavigationService($source)]" DataContext="{x:Null}" >
+            <Frame.ContentTransitions>
+                <TransitionCollection>
+                    <NavigationThemeTransition />
+                </TransitionCollection>
+            </Frame.ContentTransitions>
+        </Frame>
+    </ui:NavigationView>
+</Page>
