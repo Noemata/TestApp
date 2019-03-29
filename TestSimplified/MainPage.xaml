@@ -26,8 +26,6 @@
 
                     <core:CallMethodAction MethodName="InvokeCall" TargetObject="{Binding}" />
                     
-                    <!--<core:InvokeCommandAction Command="{Binding CommandInvokedMenu}" />-->
-
                 </core:EventTriggerBehavior>
 
             </interactivity:Interaction.Behaviors>
