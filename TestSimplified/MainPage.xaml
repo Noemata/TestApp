@@ -21,14 +21,11 @@
             PaneDisplayMode="LeftCompact"
             >
             <interactivity:Interaction.Behaviors>
-
                 <core:EventTriggerBehavior EventName="ItemInvoked">
-
                     <core:CallMethodAction MethodName="InvokeCall" TargetObject="{Binding}" />
-                    
                 </core:EventTriggerBehavior>
-
             </interactivity:Interaction.Behaviors>
+            
             <ui:NavigationView.MenuItems>
 
                 <!-- Home button -->
