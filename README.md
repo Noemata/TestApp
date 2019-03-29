@@ -11,3 +11,8 @@ Place a breakpoint inside the ItemSelected() method on the Release Build.  Refle
 ## Bugs:
 
 All bugs have been tested against Windows 10 v 1809 (RS5).
+
+## Resolved:
+
+This compiler bug has a rather convoluted workaround.  Please look at the Default.rd.xml file in both projects for the solution.
+
